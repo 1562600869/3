@@ -1,0 +1,52 @@
+		<div class="top">
+			<img src="img/QQ图片20170905111722.gif"/>
+			 <div><img src="img/QQ图片20170905111733.gif" style="margin-left: 5px;"/>收一下</div>
+			 <span>登录</span>
+		</div>
+		<div class="swiper-container" id="wrap">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><img src="img/捕获_02.png"/></div>
+				<div class="swiper-slide"><img src="img/捕获_02.png"/></div>
+				<div class="swiper-slide"><img src="img/捕获_02.png"/></div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		
+		<div class="act_a">
+			<li ng-repeat="a in arr">
+				<img src="{{a.img}}"/>
+				<p>{{a.foot}}</p>
+			</li>
+		</div>
+		
+		<div style="width: 100%;background: gainsboro;">
+		<div class="act_b">
+			<span>京东快报</span>：<b>春雷行动， 行动不如行动</b>
+		</div>
+		</div>
+		<div class="act_c">
+			
+			<span>京东秒杀</span>
+			<span>8点场</span>
+			<span>{{date | date:"mm"}}:</span><span>{{date | date:"ss"}}</span>
+		</div>
+		<div class="swiper-container" id="miaosha">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" ng-repeat="b in arr1">
+					<img src="{{b.img}}"/>
+				  <p>￥{{b.p}}</p>
+				  <s>￥{{b.s}}</s>
+				</div>
+			</div>
+		</div>
+<script> 
+	var swiper= new Swiper("#wrap",{
+			loop:true,
+			pagination:".swiper-pagination"
+		})
+	
+   var mySwiper = new Swiper('#miaosha',{
+			slidesPerView : 3,
+			spaceBetween : 20,
+			})
+</script>

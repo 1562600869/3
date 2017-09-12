@@ -1,0 +1,22 @@
+{
+ "info":[
+         {"img":"img/捕获_05.png","foot":"京东超市"},
+         {"img":"img/捕获_07.png","foot":"全球购"},
+         {"img":"img/捕获_09.png","foot":"服装城"},
+         {"img":"img/捕获_11.png","foot":"京东生鲜"},
+         {"img":"img/捕获_13.png","foot":"京东到家"},
+         {"img":"img/捕获_20.png","foot":"充值中心"},
+         {"img":"img/捕获_21.png","foot":"会赚钱"},
+         {"img":"img/捕获_22.png","foot":"领卷"},
+         {"img":"img/捕获_23.png","foot":"物流查询"},
+         {"img":"img/捕获_24.png","foot":"领京豆"}
+         ],
+     "info1":[
+              {"img":"img/捕获act_03.png","p":"128","s":"159"},
+              {"img":"img/捕获act_05.png","p":"128","s":"159"},
+              {"img":"img/捕获act_07.png","p":"128","s":"159"},
+              {"img":"img/捕获act_03.png","p":"128","s":"159"},
+              {"img":"img/捕获act_05.png","p":"128","s":"159"},
+              {"img":"img/捕获act_07.png","p":"128","s":"159"}
+              ]
+}

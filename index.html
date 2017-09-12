@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script src="js/angular-1.4.6.min.js"></script>
+       <script src="js/angular-ui-router.js"></script>
+       <script src="js/bootstrap.min.js"></script>
+       <script src="js/swiper.min.js"></script>
+       <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+       <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+       <link rel="stylesheet" type="text/css" href="css/1.css"/>
+		<title>京东</title>
+	</head>
+	<body ng-app="app">
+
+		<div id="footer" class="nav navbar-fixed-bottom">
+			<li>
+				<a ui-sref="btn">
+					<img src="img/捕获footer_03.png"/>
+					<p>首页</p>
+				</a>
+			</li>
+			<li>
+				<a ui-sref="btn1">
+					<img src="img/捕获footer_05.png"/>
+					<p>分类</p>
+				</a>
+			</li>
+			<li>
+				<a ui-sref="btn2">
+					<img src="img/捕获footer_07.png"/>
+					<p>发现</p>
+				</a>
+			</li>
+			<li>
+				<a ui-sref="btn3">
+					<img src="img/捕获footer_09.png"/>
+					<p>购物</p>
+				</a>
+			</li>
+			<li>                                                                                                           
+				<a ui-sref="btn4">
+					<img src="img/捕获footer_11.png"/>
+					<p>我的</p>
+				</a>
+			</li>
+		</div>
+		<ui-view></ui-view>
+	</body>
+	<script>
+		
+		var app = angular.module("app",["ui.router"])
+		app.controller("aaa",function($scope,$http,$interval){
+			$scope.future = new Date("2017/9/5 18:00:00").getTime();
+			$time = $interval(function(){
+				$scope.now=new Date().getTime();
+				$scope.date=new Date($scope.future-$scope.now)
+			},1000)
+			$http({
+				method:"get",
+				url:"http://127.0.0.1:5454/1"
+			}).then(function(data){
+				$scope.arr = data.data.info;
+				$scope.arr1 = data.data.info1
+			})
+		})
+		app.config(function($stateProvider,$urlRouterProvider){
+		$urlRouterProvider.otherwise('btn');  //默认页面
+			$stateProvider
+			.state("btn",{
+				url:"/btn",
+				templateUrl:"跳转的页面/1.html",
+				controller:"aaa"
+			})
+			.state("btn1",{
+				url:"/btn1",
+				template:"第二页面"
+				
+			})
+			.state("btn2",{
+				url:"/btn2",
+				template:"第三页面"
+				
+			})
+			.state("btn3",{
+				url:"/btn3",
+				template:"第四页面"
+			
+			})
+			.state("btn4",{
+				url:"/btn4",
+				template:"第五页面"
+				
+			})
+		})
+	</script>
+</html>
